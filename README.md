@@ -1,2 +1,2 @@
 # Back-End
-Repository only Back-End Activities and Exercises from Trybe
+Repository only for backend activities and Trybe exercises
