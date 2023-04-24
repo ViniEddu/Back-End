@@ -57,4 +57,17 @@ app.put('/pessoas/:id', async (req, res) => {
     }
 });
 
+app.delete('/pessoas/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const pessoas = await readPersonFiles();
+        const pessoasFiltradas = pessoas.filter((pessoa) => pessoa.id !== Number(id));
+        const pessoasAtualizadas = JSON.stringify(pessoasFiltradas, null, 2);
+        await fs.writeFile(PERSON_PATH, pessoasAtualizadas);
+        res.status(204).end();
+    } catch (Error) {
+        res.status(500).send({ message: Error.message });
+    }
+});
+
 module.exports = app;
