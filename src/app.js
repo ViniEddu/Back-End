@@ -5,6 +5,21 @@ const { readPersonFiles, PERSON_PATH } = require('./fsUtils');
 const app = express();
 app.use(express.json());
 
+app.get('/movies/search', async (req, res) => {
+    try {
+        const { q } = req.query;
+        const pessoas = await readPersonFiles();
+
+        if (q) {
+            const pessoasFiltradas = pessoas.filter((element) => element.pessoa.includes(q));
+            return res.status(200).json(pessoasFiltradas);
+        }
+        res.status(200).end();
+    } catch (error) {
+        res.status(500).send({ message: error.message });
+    }
+});
+
 app.get('/pessoas/:id', async (req, res) => {
     try {
         const pessoas = await readPersonFiles();
