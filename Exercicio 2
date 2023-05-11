@@ -1,0 +1,8 @@
+Qual a função do código de status 401?
+R: Erro HTTP que aparece para o visitante (Erro 401 Não autorizado || ACCESS DENIED);
+
+URL errada ou link desatualizado
+Credenciais incorretas
+Cache do navegador
+Problema de firewall ou DNS
+Incompatibilidade de plugins/temas

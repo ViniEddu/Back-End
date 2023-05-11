@@ -1,0 +1,2 @@
+Qual o significado do status 400 e 422?
+R: A classe de status entre 400 e 499 se referem a erros causados pelo Cliente, especificamente o 400 ou 422 de uma forma geral a aplicação estará repassando o entendimento ao cliente que o erro está do lado dele e ele precisa arrumá-lo caso queiro realizar uma nova comunicação.
